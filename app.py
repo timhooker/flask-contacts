@@ -8,23 +8,22 @@ from datetime import date
 
 app = Flask(__name__)
 print(os.environ)
-client = MongoClient(
-    'docker_db_1',
-    27017)
+client = MongoClient('backend_db_1', 27017)
 
 db = client.tododb
-count = 0
 
 @app.route('/')
 def index():
   """Home route"""
-  count = 1
+  db.counter.update({ '_id' : 'a'}, {'$inc' : { 'val' : 1 } })
+  count = db.counter.find_one( { '_id' : 'a' })['val']
   return render_template("index.html", count=count)
 
 @app.route('/api/hits')
 def hits():
   """Test API Route"""
-  count = 1
+  db.counter.update({ '_id' : 'a'}, {'$inc' : { 'val' : 1 } })
+  count = db.counter.find_one( { '_id' : 'a' })['val']
   return jsonify({'hits': count})
 
 @app.route('/api/contacts', methods=['Get'])
@@ -32,6 +31,7 @@ def contacts():
   """API for Contacts"""
   contacts = db.contacts
   _contacts = contacts.find()
+  contact_fields = {'firstname', 'lastname', 'dob', 'address', 'phone', 'email'}
   contact_list = [contact for contact in _contacts]
   return json.dumps(contact_list, indent=4, default=json_util.default)
 

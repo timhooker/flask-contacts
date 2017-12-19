@@ -3,6 +3,6 @@
 {% block body %}
   {{ super() }}
   <div id="app"></div>
-  <script src="{{ url_for('static', filename='js/dist/main.js') }}"></script>  
   Hello World! I have been seen {{count}} times
+  <script src="{{ url_for('static', filename='js/dist/build.js') }}"></script>  
 {% endblock %}

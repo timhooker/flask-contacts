@@ -1,6 +1,6 @@
 <template>
   <div className="contact">
-    <h1>{{ name }}!!</h1>
+    <h1>{{ name }}</h1>
   </div>
 </template>
 
