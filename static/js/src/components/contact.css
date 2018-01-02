@@ -1,0 +1,20 @@
+.contact {
+  text-align: left;
+  background-color: #fff;
+  min-width: 50%;
+  padding: 16px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+  margin-top: 16px;
+  max-height: 300px;
+}
+.contact-form label,
+.contact-form input,
+.contact-props li {
+  display: block;
+  text-align: left;
+}
+@media only screen and (min-width: 1080px) {
+  .contact {
+    order: 2;
+  }
+}

@@ -1,13 +1,13 @@
-webpackJsonp([0,2],{
+webpackJsonp([0,3],{
 
 /***/ 19:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ContactForm_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Contact_vue__ = __webpack_require__(25);
 /* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0405084c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ContactForm_vue__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a2b1f6c6_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Contact_vue__ = __webpack_require__(29);
 var normalizeComponent = __webpack_require__(3)
 /* script */
 
@@ -23,8 +23,8 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ContactForm_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0405084c_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ContactForm_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Contact_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_a2b1f6c6_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Contact_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -36,14 +36,14 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ 21:
+/***/ 23:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(32);
 /* empty harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_123ebfda_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0f6bd2fe_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(39);
 var normalizeComponent = __webpack_require__(3)
 /* script */
 
@@ -59,8 +59,8 @@ var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_123ebfda_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0f6bd2fe_hasScoped_false_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -72,10 +72,12 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ 26:
+/***/ 25:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contact_css__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__contact_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__contact_css__);
 //
 //
 //
@@ -89,54 +91,60 @@ var Component = normalizeComponent(
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'contact-form',
-  props: ['msg']
+  name: 'contact',
+  data() {
+    return {
+      firstname: 'Tim',
+      lastname: 'Hooker',
+      address: '860 Lockland',
+      dob: '12-21-1978',
+      phone: 'nunya',
+      email: 'timhooker@me.com'
+    };
+  }
 });
 
 /***/ }),
 
 /***/ 27:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('form',{attrs:{"id":"contact-form","action":""}},[_c('h1',[_vm._v(_vm._s(_vm.msg))]),_vm._v(" "),_vm._m(0),_vm._v(" "),_vm._m(1)])}
-var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{attrs:{"for":""}},[_vm._v("Name\n    "),_c('input',{attrs:{"type":"text"}})])},function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('label',{attrs:{"for":""}},[_vm._v("Email\n    "),_c('input',{attrs:{"type":"email"}})])}]
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(28);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(5)("fc2c5c5e", content, true);
 
 /***/ }),
 
 /***/ 28:
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(4)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, ".contact-props li{display:block}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ 29:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ContactForm_vue__ = __webpack_require__(19);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  name: 'app',
-  data() {
-    return {
-      msg: 'OK, it\'s time to write something!!!',
-      contact: {
-        name: '',
-        email: ''
-      }
-    };
-  },
-  components: { 'contact-form': __WEBPACK_IMPORTED_MODULE_0__ContactForm_vue__["default"] }
-});
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"contact"},[_c('h2',[_vm._v(_vm._s((_vm.firstname + " " + _vm.lastname)))]),_vm._v(" "),_c('ul',{staticClass:"contact-props"},[_c('li',[_vm._v(_vm._s(_vm.dob))]),_vm._v(" "),_c('li',[_vm._v(_vm._s(_vm.address))]),_vm._v(" "),_c('li',[_vm._v(_vm._s(_vm.phone))]),_vm._v(" "),_c('li',[_vm._v(_vm._s(_vm.email))])])])}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -144,7 +152,66 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[_c('h1',[_vm._v(_vm._s(_vm.msg))]),_vm._v(" "),_c('h2',[_vm._v("Essential Links!")]),_vm._v(" "),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.msg),expression:"msg"}],domProps:{"value":(_vm.msg)},on:{"input":function($event){if($event.target.composing){ return; }_vm.msg=$event.target.value}}}),_vm._v(" "),_c('contact-form',{attrs:{"msg":_vm.msg}})],1)}
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__api_contacts__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Contact__ = __webpack_require__(19);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  name: 'home',
+  data() {
+    return { contacts: [] };
+  },
+  mounted() {
+    Object(__WEBPACK_IMPORTED_MODULE_0__api_contacts__["a" /* getContacts */])().then(res => {
+      this.contacts = res;
+    });
+  },
+  components: { contact: __WEBPACK_IMPORTED_MODULE_1__Contact__["default"] }
+});
+
+/***/ }),
+
+/***/ 38:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getContacts; });
+/* unused harmony export postContact */
+function getContacts() {
+  return fetch('http://localhost:5000/api/contacts').then(data => data.json()).catch(console.log);
+}
+
+function postContact(contact) {
+  return fetch('api/contacts', {
+    method: 'POST',
+    credentials: include,
+    data: contact
+  }).then(data => data.json).catch(console.log);
+}
+
+
+
+/***/ }),
+
+/***/ 39:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('h2',[_vm._v("Contacts")]),_vm._v(" "),_c('ul',_vm._l((_vm.contacts),function(contact){return _c('li',[_c('p',[_vm._v(_vm._s(contact.firstname)+" "+_vm._s(contact.lastname))]),_vm._v(" "),_c('p',[_vm._v(_vm._s(contact.email))])])})),_vm._v(" "),_c('router-link',{attrs:{"to":"/contact-form"}},[_vm._v("Go to Contact Form")])],1)}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);

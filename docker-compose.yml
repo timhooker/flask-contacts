@@ -11,7 +11,3 @@ services:
       - db
   db:
     image: mongo:3.0.2
-  yarn-cache:
-    image: busybox
-    volumes:
-      - /root/.yarn-cache

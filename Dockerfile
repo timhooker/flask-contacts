@@ -5,4 +5,6 @@ RUN pip install -r requirements.txt
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get install -y nodejs
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash
+RUN npm install
+RUN npm run build
 ENTRYPOINT ["sh", "./entrypoint.sh"]

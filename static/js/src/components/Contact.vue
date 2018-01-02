@@ -1,19 +1,21 @@
 <template>
-  <div className="contact">
-    <h1>{{ name }}</h1>
+  <div class="contact" v-if="contact">
+    <h1>{{ `${contact.firstname} ${contact.lastname}` }}</h1>
+    
+    <ul class="contact-props">
+      <li>{{contact.dob}}</li>
+      <li>{{contact.address}}</li>
+      <li>{{contact.phone}}</li>
+      <li>{{contact.email}}</li>
+    </ul>
+    <router-link to="/">Done</router-link>
   </div>
 </template>
 
 <script>
+import * as styles from './contact.css';
 export default {
-  name: 'contact-form',
-  props: ['msg']
+  name: 'contact',
+  props: ['contact', 'id']
 }
 </script>
-
-// "firstname": "Jim",
-// "lastname": "Hopper",
-// "dob": date(1940,6,6).isoformat(),
-// "address": "555 somewhere ln",
-// "phone": "555-555-5555",
-// "email": "jim@example.com"

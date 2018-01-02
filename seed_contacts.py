@@ -2,9 +2,7 @@ from pymongo import MongoClient
 from datetime import date
 
 print('Seeding contacts')
-client = MongoClient(
-    'docker_db_1',
-    27017)
+client = MongoClient('backend_db_1', 27017)
 
 db = client.tododb
 contacts = db.contacts

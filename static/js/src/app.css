@@ -1,12 +1,22 @@
+*, body {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  background-color: #efefef;
 }
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 40px;
+  margin-top: 56px;
+}
+
+.app-body {
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2 {
@@ -20,9 +30,44 @@ ul {
 
 li {
   display: inline-block;
-  margin: 0 10px;
 }
 
 a {
-  color: #42b983;
+  color: #3f51b5;
+}
+
+.btn {
+  border-radius: 0;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+}
+
+.btn:hover {
+  opacity: .8;
+}
+
+.btn__raised {
+  background-color: #3f51b5;
+  color: #fff;
+}
+
+.btn__raised:hover {
+  background-color: #001064;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 16px;
+}
+
+@media only screen and (min-width: 1080px) {
+  .container {
+    margin: 0 auto;
+  } 
+  .app-body {
+    flex-direction: row;
+  }
 }

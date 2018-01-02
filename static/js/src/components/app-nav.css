@@ -1,0 +1,33 @@
+.app-nav {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 8px 16px;
+  text-align: right;
+  background-color: #002984;
+  color: #fff;
+  box-shadow: 2px 2px 1px rgba(0,0,0,.2);
+}
+
+.app-nav__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-nav__item {
+  margin-left: 16px;
+}
+.app-nav__logo {
+  justify-self: flex-start;
+}
+
+.app-nav__logo a,
+.app-nav__item a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.router-link-exact-active {
+  font-weight: bold;
+}
