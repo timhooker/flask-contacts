@@ -10,7 +10,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
-client = MongoClient('backend_db_1', 27017)
+client = MongoClient('www_db_1', 27017)
 db = client.tododb
 
 @app.route('/')
