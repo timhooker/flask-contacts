@@ -1,5 +1,5 @@
 function getContacts() {
-  return fetch('http://localhost:5000/api/contacts')
+  return fetch('api/contacts')
     .then(data => data.json())
     .catch(console.log);
 }
