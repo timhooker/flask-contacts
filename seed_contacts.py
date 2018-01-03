@@ -5,6 +5,10 @@ print('Seeding contacts')
 client = MongoClient('www_db_1', 27017)
 
 db = client.tododb
+
+"""setting up hits counter to run"""
+db.counter.insert({'_id': 'a', 'val': 1})
+
 contacts = db.contacts
 
 contact_list = [{
