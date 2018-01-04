@@ -4,47 +4,24 @@
       id="contact-form" 
       class="contact-form modal" 
       action=""
-      @submit.prevent="() => !errors.all().length && onSubmit(contact)"
+      @submit.prevent="() => submit(contact)"
     >
       <h2 class="contact-form__header">{{ msg }}</h2>
       <section class="contact-form__fields">
         <label v-for="[key, val] in formFields">
           {{val}}
-          <span v-if="key === 'dob'">
-            <input 
-              type="text" 
-              class="contact-form__input"
-              v-on:click="showDatePicker = true" 
-              v-model="contact[key]"
-              placeholder="Click to Enter your Birthday"
-              v-bind:name="key"
-              v-validate="'required'"
-              key="date-input"
-            >
-            <transition name="calendar-fade">
-              <date-picker 
-                color="#3f51b5" 
-                @close="showDatePicker = false" 
-                v-if="showDatePicker" 
-                min="07-04-76"
-                v-model="contact[key]"
-                class="contact-form__input"
-                key="date-picker"
-              ></date-picker>
-            </transition>
-          </span>
           <input
-            v-else
             class="contact-form__input"
             v-bind:type="inputTypes[key]"
-            v-validate="'required'"
+            v-validate="key === 'address' ? '' : `required|${validatorTypes[key]}`"
             v-bind:name="key"
+            v-on:click="updated=true"
             v-model="contact[key]">
           <span class="contact-form__input-error" v-if="key !== 'dob'">{{errors.first(key)}}</span>
         </label>
       </section>
       <section class="contact-form__actions">
-        <button class="btn btn__raised contact-form__submit" :disabled="errors.all().length >= 1" type="submit">Save Contact</button>
+        <button class="btn btn__raised contact-form__submit" :disabled="errors.all().length > 0" type="submit">Save Contact</button>
         <button class="btn contact-form__cancel" @click.prevent="closeForm">Cancel</button>
         <button class="btn contact-form__cancel" @click.prevent="() => onDelete(contact)">Delete</button>
       </section>
@@ -62,6 +39,7 @@
 
 import './contact-form.css';
 import DatePicker from 'vue-md-date-picker';
+import { Validator } from 'vee-validate';
 const formFields = [
   ['firstname', 'First Name'], 
   ['lastname', 'Last Name'], 
@@ -89,13 +67,28 @@ export default {
         'phone': 'tel',
         'email': 'email'
       },
+      validatorTypes: {
+        'dob': 'date',
+        'address': '',
+        'firstname': '',
+        'lastname': '',
+        'phone': '',
+        'email': 'email'
+      },
       contact: this.update ? this.update : formFields.reduce((contact,[key, val]) => {
         contact[key] = '';
         return contact;
-      }, {})
+      }, {}),
+      updated: false
     }
   },
   props: ['closeForm', 'onSubmit', 'onDelete', 'msg', 'update'],
-  components: {'date-picker': DatePicker}  
+  components: {'date-picker': DatePicker},
+  methods: {
+    submit(contact) {
+      this.updated && this.onSubmit(this.contact)
+    }
+  }
+
 }
 </script>
