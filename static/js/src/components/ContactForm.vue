@@ -70,8 +70,8 @@ export default {
       validatorTypes: {
         'dob': 'date',
         'address': '',
-        'firstname': '',
-        'lastname': '',
+        'firstname': 'alpha',
+        'lastname': 'alpha',
         'phone': '',
         'email': 'email'
       },
