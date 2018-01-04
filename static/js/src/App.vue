@@ -22,9 +22,14 @@
         v-if="showForm" 
         v-bind:msg="formMsg"
         v-bind:update="update"
-        :submit="contact => { 
+        :onSubmit="contact => {
           showForm = false;
           newContact(contact);
+          updateContacts();
+        }" 
+        :onDelete="contact => { 
+          showForm = false;
+          deleteContact(contact);
           updateContacts();
         }" 
       />
@@ -34,7 +39,7 @@
 </template>
 
 <script>
-import { getContacts, createContact } from './api/contacts';
+import { getContacts, createContact, deleteContact } from './api/contacts';
 import AppNav from './components/AppNav';
 import Contact from './components/Contact';
 import ContactList from './components/ContactList';
@@ -74,6 +79,11 @@ export default {
           this.contacts = res;
         })
       }, 200)
+    },
+    deleteContact(contact = this.contact) {
+      return deleteContact(contact).then(res => {
+        router.push('/')
+      })
     }
   },
 }

@@ -14,6 +14,7 @@
     "babel-polyfill": "^6.26.0",
     "moment": "^2.20.1",
     "uglify-js": "^3.2.2",
+    "vee-validate": "^2.0.0",
     "vue": "^2.5.2",
     "vue-md-date-picker": "^1.0.15",
     "vue-router": "^3.0.1"

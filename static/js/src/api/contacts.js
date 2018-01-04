@@ -4,6 +4,17 @@ function getContacts() {
     .catch(console.log);
 }
 
+function deleteContact(contact) {
+  return fetch(`api/contact/${contact.id}`, {
+    method: 'DELETE',
+    credentials: 'include',
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }).then(data => data.json)
+    .catch(console.log)
+}
+
 function createContact(contact) {
   return fetch('api/contacts', {
       method: 'POST',
@@ -17,4 +28,4 @@ function createContact(contact) {
 }
 
 
-export {getContacts, createContact}
+export {getContacts, createContact, deleteContact}

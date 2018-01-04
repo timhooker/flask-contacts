@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, jsonify, request
 from pymongo import MongoClient
-from bson import json_util
+from bson import json_util, ObjectId
 from helpers import filter_contacts, filter_contact
 import json
 from datetime import date
@@ -27,26 +27,39 @@ def hits():
 
 @app.route('/api/contacts', methods=['Get'])
 def contacts():
-  """API for Contacts"""
+  """API for Contacts - INDEX"""
   contacts = db.contacts
   _contacts = contacts.find()
   """Using helper method to ensure we only return desired information"""
   contact_list = filter_contacts([contact for contact in _contacts])
   return json.dumps(contact_list, indent=4, default=json_util.default)
 
-@app.route('/api/contacts', methods=['POST'])
-def new_contact():
-  """API for Contacts"""
+@app.route('/api/contacts', methods=['POST', 'PUT'])
+def modify_contact():
+  """API for Contacts - POST PUT"""
   contacts = db.contacts
   data = json.loads(request.data)
   """Using helper method to ensure we only save desired information"""
   contact = filter_contact(data)
   if("email" in contact and contact["email"] is not ""):
     contacts.replace_one({"email":data["email"]}, contact, True)
-    new_contact = contacts.find_one({"email": contact["email"]})
-    return jsonify(filter_contact(new_contact))
+    _contact = contacts.find_one({"email": contact["email"]})
+    return jsonify(filter_contact(_contact))
   else:
     return jsonify({"msg": "Email is a required key for user data"})
 
+
+@app.route('/api/contact/<string:contact_ID>', methods=['GET', 'Delete'])
+def contact(contact_ID):
+  """API for Contacts - GET"""
+  contacts = db.contacts
+  if (request.method == 'DELETE'):
+    _contact = contacts.find_one_and_delete({'_id': ObjectId(contact_ID)})
+  else:
+    _contact = contacts.find_one({'_id': ObjectId(contact_ID)})
+    
+  return json.dumps(_contact, indent=4, default=json_util.default)
+
+
 if __name__ == "__main__":
-  app.run(host="0.0.0.0", debug=True, port=80)
+  app.run(host="0.0.0.0", debug=True)
